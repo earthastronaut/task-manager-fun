@@ -12,8 +12,3 @@ A simple, containerized task manager application built with **Flask**, **SQLAlch
 - ⚙️ Environment configuration via `.env` and optional `.env-local`
 - 🧩 Schema migrations using Flask-Migrate
 - 📦 Makefile for easy CLI automation
-
----
-
-## 📂 Project Structure
-
