@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <form method="POST">
+        <input type="text" name="title" placeholder="Enter a task" required>
+        <input type="submit" value="Add">
+    </form>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <form action="{{ url_for('complete', task_id=task.id) }}" method="get" style="display:inline;">
+                    <button type="submit">{{ '✔' if task.done else '⬜' }}</button>
+                </form>
+                {{ task.title }}
+                <a href="{{ url_for('delete', task_id=task.id) }}">🗑️</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
