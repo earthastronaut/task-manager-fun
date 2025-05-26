@@ -13,7 +13,7 @@ include .env
 build:
 	$(DC) build
 
-freeze:
+freeze: down
 	$(DC) build --build-arg REQUIREMENTS=requirements.txt web
 	$(DC) run --rm web pip freeze | sort > requirements-freeze.txt
 
