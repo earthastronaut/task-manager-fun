@@ -1,0 +1,30 @@
+services:
+  web: &web
+    build: .
+    expose:
+      - "5000"
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  manage:
+    <<: *web
+    command: sh -c "while true; do sleep 1; done"
+
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
