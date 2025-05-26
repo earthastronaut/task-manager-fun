@@ -1,0 +1,12 @@
+
+# Config
+pydantic-settings
+
+# Web
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+psycopg2-binary
+
+# Management
+click
