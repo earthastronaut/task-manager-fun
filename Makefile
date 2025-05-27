@@ -43,7 +43,12 @@ db-init:
 	$(DC) exec manage flask db init
 
 db-migrate:
-	$(DC) exec manage flask db migrate -m "Update schema"
+	@read -p "Enter migration message: " message; \
+	if [ -z "$$message" ]; then \
+		echo "Migration message cannot be empty"; \
+		exit 1; \
+	fi; \
+	$(DC) exec manage flask db migrate -m "$$message"
 
 db-upgrade:
 	$(DC) exec manage flask db upgrade
