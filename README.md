@@ -60,7 +60,7 @@ To deploy the Flask Task Manager application on [Render](https://render.com), fo
 
 5. **Set Up a PostgreSQL Database**  
    - In the Render dashboard, create a new **PostgreSQL Database**.
-   - Update the `DATABASE_URL` environment variable in your Render service to point to the Render database.
+   - Update the `POSTGRES_*` environment variables (see .env) in your Render service to point to the Render database.
 
 6. **Deploy the Application**  
    - Save the configuration and deploy the service.
