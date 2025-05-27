@@ -5,6 +5,7 @@ ENV_FILE := .env
 else
 ENV_FILE := .env-local
 endif
+export ENV_FILE
 DC = docker compose --env-file ${ENV_FILE}
 
 include .env
